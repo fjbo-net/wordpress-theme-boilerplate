@@ -1,0 +1,32 @@
+{
+  "name": "@fjbo-net/web-client-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for web-based (client) projects.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjbo-net/web-client-boilerplate.git"
+  },
+  "author": "Francisco Javier Becerra-Ortiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fjbo-net/web-client-boilerplate/issues"
+  },
+  "homepage": "https://github.com/fjbo-net/web-client-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "del": "^6.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}
