@@ -15,5 +15,4 @@ test
 vendor
 temp
 tmp
-package-lock.json
 *.log
