@@ -4,7 +4,8 @@ const
 dirs = {
 	src: `./src`,
 	dist: `./dist`,
-	media: `./media`,
+	lang: './languages',
+	media: `./resources`,
 	npm: `./node_modules`
 },
 pkgs = {
@@ -38,7 +39,7 @@ pkgs.gulp.task(
 	() => pkgs.gulp
 		.src(
 			[
-				pkgs.path.join(dirs.src, `**/*.html`)
+				pkgs.path.join(dirs.src, `**/*.php`)
 			],
 			{ base: dirs.src }
 		)
@@ -50,7 +51,10 @@ pkgs.gulp.task(
 pkgs.gulp.task(
 	`copy:media`,
 	() => pkgs.gulp
-		.src( pkgs.path.join(dirs.media, `**/*`) )
+		.src([
+			pkgs.path.join(dirs.media, `**/*`),
+			pkgs.path.join(dirs.lang, `**/*`)
+		])
 		.pipe( pkgs.gulp.dest(dirs.dist) )
 );
 
@@ -91,10 +95,10 @@ pkgs.gulp.task(
 	pkgs.gulp
 		.series(
 			`clean`,
-			// `copy:src`,
-			// `js`,
-			// `sass`
-			// `copy:media``
+			`copy:src`,
+			`js`,
+			`sass`,
+			`copy:media`
 		)
 );
 
