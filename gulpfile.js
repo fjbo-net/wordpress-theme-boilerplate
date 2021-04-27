@@ -107,3 +107,23 @@ pkgs.gulp.task(
 	`default`,
 	pkgs.gulp.series(`build`)
 );
+
+
+let globsToWatch = [
+	dirs.src + `**/*`,
+	`README.md`
+];
+pkgs.gulp.task(
+	`watch`,
+	() => pkgs.gulp.watch(
+		globsToWatch,
+		(callback) => {
+			console.clear();
+			pkgs.gulp.series(
+				`build`,
+				() => console.log(`Watching changes in ${globsToWatch.join(', ')}...`)
+			)();
+			callback();
+		}
+	)
+);
